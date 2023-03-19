@@ -10,12 +10,13 @@ def setup_shiny():
     def _get_shiny_cmd(port):
         conf = dedent("""
             run_as {user};
+            preserve_logs on;
             server {{
                 listen {port};
                 location / {{
-                    site_dir {site_dir};
-                    log_dir {site_dir}/logs;
-                    bookmark_state_dir {site_dir}/bookmarks;
+                    site_dir {site_dir}/work;
+                    log_dir {site_dir}/work/logs;
+                    bookmark_state_dir {site_dir}/work/bookmarks;
                     directory_index on;
                 }}
             }}
