@@ -14,9 +14,9 @@ def setup_shiny():
             server {{
                 listen {port};
                 location / {{
-                    site_dir {site_dir}/work;
-                    log_dir {site_dir}/work/logs;
-                    bookmark_state_dir {site_dir}/work/bookmarks;
+                    site_dir {site_dir};
+                    log_dir {site_dir}/logs;
+                    bookmark_state_dir {site_dir}/bookmarks;
                     directory_index on;
                 }}
             }}
